@@ -174,8 +174,12 @@ ig.module('plugins.joncom.tile-shader.tile-shader')
         },
 
         setTile: function(y, x, shade) {
-            if (shade > this.ambientLight) shade = this.ambientLight;
-            if (shade < 0) shade = 0;
+            if (shade > this.ambientLight) {
+                shade = this.ambientLight;
+            }
+            if (shade < 0) {
+                shade = 0;
+            }
             if (!(x < 0 || y < 0 || x > this.viewSize.x - 1 || y > this.viewSize.y - 1)) {
                 if (!this.shadeCircle) {
                     this.lightMap.data[y][x] = this.innerShade;
