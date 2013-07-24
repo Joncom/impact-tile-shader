@@ -180,12 +180,14 @@ ig.module('plugins.joncom.tile-shader.tile-shader')
             if (shade < 0) {
                 shade = 0;
             }
-            if (!(x < 0 || y < 0 || x > this.viewSize.x - 1 || y > this.viewSize.y - 1)) {
-                if (!this.shadeCircle) {
-                    this.lightMap.data[y][x] = this.innerShade;
-                } else {
-                    this.lightMap.data[y][x] = shade;
-                }
+            // Trying to set non-existent tile?
+            if (x < 0 || y < 0 || x > this.viewSize.x - 1 || y > this.viewSize.y - 1) {
+                return;
+            }
+            if (!this.shadeCircle) {
+                this.lightMap.data[y][x] = this.innerShade;
+            } else {
+                this.lightMap.data[y][x] = shade;
             }
         },
 
