@@ -1,4 +1,4 @@
-ig.module('game.TileShader')
+ig.module('plugins.joncom.tile-shader.tile-shader')
 .defines(function() {
 
     TileShader = ig.Class.extend({
