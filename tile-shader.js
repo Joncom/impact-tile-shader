@@ -55,9 +55,9 @@ ig.module('plugins.joncom.tile-shader.tile-shader')
         },
 
         clear: function(lightValue) {
-            for (var iY = 0; iY < this.viewSize.y; iY++) {
-                for (var iX = 0; iX < this.viewSize.x; iX++) {
-                    this.lightMap.data[iY][iX] = lightValue;
+            for (var y = 0; y < this.viewSize.y; y++) {
+                for (var x = 0; x < this.viewSize.x; x++) {
+                    this.lightMap.data[y][x] = lightValue;
                 }
             }
         },
